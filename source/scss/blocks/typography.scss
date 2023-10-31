@@ -1,0 +1,31 @@
+.h1 {
+    @include mxn-font-style($h1FontSize, $h1LineHeight, $h1FontFamily, $h1CharacterSpace, $main-white);
+}
+
+.h2 {
+    @include mxn-font-style($h2FontSize, $h2LineHeight, $h2FontFamily, $h2CharacterSpace, $main-white);
+}
+
+.h3 {
+    @include mxn-font-style($h3FontSize, $h3LineHeight, $h3FontFamily, $h3CharacterSpace, $main-white);
+}
+
+.h4 {
+    @include mxn-font-style($h4FontSize, $h4LineHeight, $h4FontFamily, $h4CharacterSpace, $main-white);
+}
+
+.h5 {
+    @include mxn-font-style($h5FontSize, $h5LineHeight, $h5FontFamily, $h5CharacterSpace, $main-lavander);
+}
+
+.subheading1 {
+    @include mxn-font-style($subheading1FontSize, $subheading1LineHeight, $subheading1FontFamily, $subheading1CharacterSpace, $main-white);
+}
+
+.subheading2 {
+    @include mxn-font-style($subheading2FontSize, $subheading2LineHeight, $subheading2FontFamily, $subheading2CharacterSpace, $main-white);
+}
+
+.navText {
+    @include mxn-font-style($navTextFontSize, $navTextLineHeight, $navTextFontFamily, $navTextCharacterSpace, $main-white);
+}
