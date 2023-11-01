@@ -25,12 +25,9 @@ img {
   overflow: hidden;
 }
 
-html, body{ 
-  height: 100vh;
-}
-
 .page {
   background-color: $main-black;
+  height: 100vh;
 }
 
 .container {
@@ -40,6 +37,7 @@ html, body{
   min-width: $mobile-width;
   max-width: $mobile-width-max;
   width: 100%;
+  min-height: 100%;
   @include mxn-font-style(16px, 20px, 'Barlow', 0, $main-white);
 
   @media (min-width: $tablet-width) {
@@ -87,7 +85,7 @@ html, body{
 
 .page-main {
   padding: 0 24px;
-  height: auto;
+  height: fit-content;
 
   @media (min-width: $tablet-width) {
     padding: 0 39px;

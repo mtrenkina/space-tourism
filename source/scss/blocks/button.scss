@@ -11,6 +11,15 @@
   letter-spacing: 1.25px;
   position: relative;
 
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 90px;  
+  }
+  
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+
   &::before {
     content: '';
     position: absolute;
