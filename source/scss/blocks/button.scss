@@ -1,12 +1,61 @@
 .button {
-  padding: 0.75rem;
-  width: 127px;
-  height: 46px;
+  padding: 27px;
+  width: 150px;
+  height: 150px;
   background-color: $main-white;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
+  color: $main-black;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  position: relative;
 
-  &:hover {
-    opacity: 0.8;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 246px;
+    height: 246px;
+    border-radius: 50%;
+    top: -48px;
+    left: -48px;
+    background-color: rgba($main-white, 0.1);
+    transform: scale(0.2);
+    transition: transform 0.7s;
   }
+
+  &:hover::before {
+    background-color: rgba($main-white, 0.1);
+    transform: scale(1);
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 242px;
+    height: 242px;
+    font-size: 32px;
+    letter-spacing: 2px;
+
+    &::before {
+      top: 0px;
+      left: 0px;
+    }
+
+    &:hover::before {
+      width: 418px;
+      height: 418px;
+      top: -88px;
+      left: -88px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 274px;
+    height: 274px;
+
+    &:hover::before {
+      width: 450px;
+      height: 450px;
+    }
+  }
+
 }

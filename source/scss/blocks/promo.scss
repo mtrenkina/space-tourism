@@ -1,0 +1,100 @@
+.promo {
+  width: 100%;
+  padding-bottom: 48px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 90px;  
+  }
+  
+  @media (min-width: $desktop-width) {
+     padding: 0;
+  }
+  
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $tablet-width) {
+    }
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 386px;
+    }
+  }
+
+  &__text {
+    padding-bottom: 81px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    min-width: 450px;
+    text-align: center;
+    gap: 16px;
+
+    @media (min-width: $tablet-width) {
+        padding-bottom: 156px;
+        gap: 24px; 
+    }
+    
+    @media (min-width: $desktop-width) {
+       padding-bottom: 88px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 25px;
+    color: $main-lavander;
+    width: 327px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 28px;
+      width: 450px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 18px;
+      line-height: 32px;
+      text-align: justify;
+    }
+  }
+
+  &__text .h5 {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 20px;
+      letter-spacing: 3.38px;
+    }
+
+    @media (min-width: $desktop-width) {
+      align-self: flex-start;
+      font-size: 28px;
+      letter-spacing: 4.72px;
+    }
+  }
+
+  &__text .h1 {
+    font-size: 80px;
+    line-height: 100px;
+
+    @media (min-width: $tablet-width) {
+        font-size: 150px;
+        line-height: 150px;
+      }
+  
+      @media (min-width: $desktop-width) {
+      }
+  }
+
+  &__text .h5,
+  &__text .h1 {
+    text-transform: uppercase;
+  }
+}

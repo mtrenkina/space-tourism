@@ -1,21 +1,34 @@
 .main-nav {
-  position: relative;
   gap: 0.8rem;
   display: flex;
   align-items: center;
-  min-height: auto;
+
+  @media (min-width: $tablet-width) {
+    height: 100%;
+    align-items: start;
+  }
 
   &__logo {
+    display: flex;
     margin-right: auto;
+
+    @media (min-width: $tablet-width) {
+      padding-top: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      padding-top: 28px;
+    }
   }
 
   &__logo img {
-    min-width: 36.82px;
-    min-height: 36.97px;
+    width: 40px;
+    height: 40px;
+    align-self: center;
 
-    @media (min-width: $desktop-width) {
-      min-width: 36.82px;
-      min-height: 36.97px;
+    @media (min-width: $tablet-width) {
+      width: 48px;
+      height: 48px;
     }
   }
 
@@ -25,43 +38,66 @@
 
   &__wrapper {
     position: absolute;
-    border-radius: 14px;
-    padding: 1.25rem 2.5rem;
-    right: 0;
-    width: 100%;
+    z-index: 10;
+    right: 4px;
+    top: 0;
+    backdrop-filter: blur(70px);
+    width: 254px;
+    height: 100%;
+
+    @media (min-width: $tablet-width) {
+      position: static;
+      width: auto;
+      background: none;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      min-width: 450px;
+    }
+    
+    @media (min-width: $desktop-width) {
+      min-width: 830px; 
+      height: 96px;
+      backdrop-filter: blur(20px);
+    }
   }
 
   &__list {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    column-gap: 2.1875rem;
-    row-gap: 1.25rem;
-  }
+    flex-direction: column;
+    gap: 32px;
 
-  &__contacts a {
-    display: block;
-    @include mxn-link-style(white);
-    min-width: max-content;
-    margin-right: 1rem;
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 37px;
+      position: relative;
+      height: 100%;
+    }
+
+    @media (min-width: $desktop-width) {
+      justify-content: start;
+      height: initial;
+      gap: 38px;
+    }
   }
 
   &__toogle {
     display: block;
     position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 4px;
+    width: 19.09px;
+    height: 19.09px;
+    top: 32px;
     right: 30px;
-    z-index: 2;
+    z-index: 100;
     border: 0;
     cursor: pointer;
-    color: black;
+    color: $main-lavander;
     background-color: transparent;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $tablet-width) {
       display: none;
     }
   }
@@ -70,10 +106,10 @@
   &--opened &__toogle::after {
     content: '';
     position: absolute;
-    top: 10px;
+    top: 8px;
     right: 0;
     width: 24px;
-    height: 2px;
+    height: 3px;
     background-color: currentColor;
   }
 
@@ -91,9 +127,9 @@
     top: 0px;
     right: 0;
     width: 24px;
-    height: 2px;
-    background-color: black;
-    box-shadow: 0 8px 0 0 #000, 0 16px 0 0 #000;
+    height: 3px;
+    background-color: $main-lavander;
+    box-shadow: 0 8px 0 0 $main-lavander, 0 16px 0 0 $main-lavander;
   }
 
   @media (max-width: $mobile-width-max) {

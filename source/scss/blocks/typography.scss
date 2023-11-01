@@ -15,7 +15,15 @@
 }
 
 .h5 {
-    @include mxn-font-style($h5FontSize, $h5LineHeight, $h5FontFamily, $h5CharacterSpace, $main-lavander);
+    @include mxn-font-style($h5FontSize, $h5LineHeight, $h5FontFamily, $h5CharacterSpace, $main-white);
+}
+
+.h5--lavander {
+    color: $main-lavander;
+}
+
+.h5--font-condensed {
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .subheading1 {

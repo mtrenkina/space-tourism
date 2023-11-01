@@ -25,27 +25,75 @@ img {
   overflow: hidden;
 }
 
-.page {
-  background-color: $main-black;
+html, body{ 
+  height: 100vh;
 }
 
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+.page {
+  background-color: $main-black;
 }
 
 .container {
   position: relative;
   z-index: 0;
   margin: 0 auto;
-  max-width: $desktop-width;
+  min-width: $mobile-width;
+  max-width: $mobile-width-max;
   width: 100%;
-  height: auto;
-  @include mxn-font-style($baseFontSize, $baseLineHeight, $baseFontFamily, $baseCharacterSpace, $main-white);
-  font-family: sans-serif;
+  @include mxn-font-style(16px, 20px, 'Barlow', 0, $main-white);
+
+  @media (min-width: $tablet-width) {
+    @include mxn-font-style(
+      $baseFontSize,
+      $baseLineHeight,
+      $baseFontFamily,
+      $baseCharacterSpace,
+      $main-white
+    );
+    min-width: $tablet-width;
+    max-width: $tablet-width-max;
+    width: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: $desktop-width;
+    max-width: 100vw;
+    width: 100%;
+  }
+}
+
+.container-background {
+  position: absolute;
+
+  background-color: $main-black;
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../img/home/background-home-mobile.jpg');
+
+  @media (min-width: $tablet-width) {
+    background-image: url('../../img/home/background-home-tablet.jpg');
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: url('../../img/home/background-home-desktop.jpg');
+  }
 }
 
 .page-main {
-  padding: 2.5rem;
+  padding: 0 24px;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 39px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 165px;
+  }
 }

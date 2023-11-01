@@ -6,54 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
+    <link type="text/css" rel="stylesheet" href="./css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow&family=Bellefair&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="./img/favicon.png" />
     <link rel="stylesheet" href="./css/styles.min.css" />
     <title>Space tourism</title>
-  </head> 
+  </head>
   <body class="container">
+    <div class="container-background"></div>
     <object
       class="visually-hidden"
       type="image/svg+xml"
       data="./img/sprite.min.svg"
     ></object>
     <header class="page-header">
-  <nav class="main-nav">
+  <nav class="main-nav main-nav--closed">
     <a href="#" class="main-nav__logo">
       <img src="./img/logo.svg" alt="Space travel logo" />
     </a>
-    <ul class="main-nav__list site-list">
-      <li class="site-list__item">
-        <a href="#">00 Home</a>
-      </li>
-      <li class="site-list__item">
-        <a href="#">01 Destination</a>
-      </li>
-      <li class="site-list__item">
-        <a href="#">02 Crew</a>
-      </li>
-      <li class="site-list__item">
-        <a href="#">03 Technology</a>
-      </li>
-    </ul>
+    <button class="main-nav__toogle" type="button">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <div class="main-nav__wrapper">
+      <ol class="main-nav__list site-list">
+        <li class="site-list__item">
+          <a class="site-list__active-link" href="#"><span>00</span> Home</a>
+        </li>
+        <li class="site-list__item">
+          <a href="#"><span>01</span> Destination</a>
+        </li>
+        <li class="site-list__item">
+          <a href="#"><span>02</span> Crew</a>
+        </li>
+        <li class="site-list__item">
+          <a href="#"><span>03</span> Technology</a>
+        </li>
+      </ol>
+    </div>
   </nav>
 </header>
-    <main class="page-main"></main>
-    <h1 class="visually-hidden">Space tourism</h1>
-    <section class="promo">
-    <div class="promo__wrapper">  So, you want to travel to
-        Space
-        Let’s face it; if you want to go to space, you might as well genuinely go to 
-        outer space and not hover kind of on the edge of it. Well sit back, and relax 
-        because we’ll give you a truly out of this world experience!
-      
-        Explore</div>
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Space tourism</h1>
+      <section class="promo">
+  <div class="promo__wrapper">
+    <div class="promo__text">
+      <h2 class="h5 h5--font-condensed h5--lavander">
+        So, you want to travel to
+      </h2>
+      <h2 class="h1">Space</h2>
+      <p class="promo__description">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+    <button class="promo__button button h4">Explore</button>
+  </div>
 </section>
-    <script type="text/javascript" src="./js/main.min.js"></script>
+
+    </main>
+    <script type="text/javascript" src="./js/script.min.js"></script>
   </body>
 </html>

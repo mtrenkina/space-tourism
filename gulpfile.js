@@ -98,7 +98,7 @@ export const scripts = () => {
         presets: ['@babel/env'],
       })
     )
-    .pipe(rename('script.min.css'))
+    .pipe(rename('script.min.js'))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(path.build.js))
     .pipe(sync.reload({ stream: true }));

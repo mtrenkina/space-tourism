@@ -1,5 +1,23 @@
 .page-header {
-  padding: 1.75rem 2.5rem 0rem 8.375rem;
+  padding: 0 24px;
+  padding-top: 24px;
   max-width: 100%;
   width: 100%;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    padding-left: 39px;
+    padding-top: 0px;
+    height: 96px;
+    margin-bottom: 106px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    padding-left: 55px;
+    padding-top: 40px;
+    margin-bottom: 250px;
+    height: 96px;
+  }
 }
