@@ -1,0 +1,232 @@
+.technology {
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: $mobile-width;
+    align-self: center;
+
+    @media (min-width: $tablet-width) {
+      min-width: 100%;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: grid;
+      column-gap: 80px;
+      align-items: start;
+      justify-items: start;
+      grid-template-columns: 80px 470px auto;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    margin-bottom: 32px;
+
+    @media (min-width: $tablet-width) {
+      align-self: flex-start;
+      font-size: 20px;
+      letter-spacing: 3.38px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 1 / 1 / 2 / 3;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__title span {
+    opacity: 0.25;
+    margin-right: 15px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 170px;
+    margin-bottom: 26px;
+
+    @media (min-width: $tablet-width) {
+      min-height: 310px;
+      width: max-content;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 2 / 3 / 6 / 4;
+      width: 515px;
+      height: 527px;
+    }
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 85%;
+
+    @media (min-width: $tablet-width) {
+      width: 100vw;
+    }
+
+    @media (min-width: $desktop-width) {
+    }
+  }
+
+  &__list {
+    @include mxn-list-style;
+    height: min-content;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 34px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 44px;
+    }
+
+    @media (min-width: $desktop-width) {
+      flex-direction: column;
+      padding-top: 111px;
+      grid-area: 2 / 1 / 6 / 2;
+    }
+  }
+
+  &__item {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba($main-white, 0.25);
+    position: relative;
+
+    @media (min-width: $tablet-width) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__item:hover {
+    border: 1px solid rgba($main-white, 1);
+  }
+
+  &__item button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media (min-width: $tablet-width) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__item span {
+    font-family: 'Bellefair';
+    font-size: 16px;
+    color: $main-white;
+
+    @media (min-width: $tablet-width) {
+      font-size: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 32px;
+    }
+  }
+
+  &__item--active button {
+    background-color: $main-white;
+    cursor: initial;
+  }
+
+  &__item--active span {
+    color: $main-black;
+  }
+
+  &__item-title {
+    text-transform: uppercase;
+    color: $main-lavander;
+    font-family: 'Barlow Condensed';
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 2.36px;
+    margin-bottom: 9px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 2 / 2 / 3 / 3;
+      letter-spacing: 2.7px;
+      padding-top: 111px;
+    }
+  }
+
+  &__item-name {
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 16px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 3 / 2 / 4 / 3;
+      font-size: 56px;
+      line-height: 56px;
+    }
+  }
+
+  &__item-description {
+    width: 327px;
+    font-size: 15px;
+    line-height: 25px;
+    color: $main-lavander;
+    text-align: center;
+    padding-bottom: 32px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 28px;
+      width: 440px;
+      padding-bottom: 97px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 4 / 2 / 5 / 3;
+      width: 444px;
+      text-align: left;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}

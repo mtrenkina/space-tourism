@@ -1,0 +1,232 @@
+.destination { 
+   
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 327px;
+    align-self: center;
+
+    @media (min-width: $tablet-width) {
+      min-width: 100%;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: grid;
+      column-gap: 157px;
+      align-items: start;
+      grid-template-columns: 509px 445px;
+      padding-bottom: 112px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    margin-bottom: 32px;
+
+    @media (min-width: $tablet-width) {
+      align-self: flex-start;
+      font-size: 20px;
+      letter-spacing: 3.38px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 1 / 1 / 2 / 2;
+      margin-bottom: 97px;
+    }
+  }
+
+  &__title span {
+    opacity: 0.25;
+    margin-right: 15px;
+  }
+
+  &__image {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 53px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 2 / 1 / 6 / 2;
+      justify-self: end;
+      width: 445px;
+      height: 445px;
+    }
+  }
+
+  &__planet-list {
+    @include mxn-list-style;
+    display: flex;
+    gap: 26px;
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+      gap: 35px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 2 / 2 / 3 / 3;
+      padding-bottom: 37px;
+    }
+  }
+
+  &__planet {
+    height: 28px;
+
+    @media (min-width: $tablet-width) {
+      height: 36px;
+    }
+
+    @media (min-width: $desktop-width) {
+      height: 34px;
+    }
+  }
+
+  &__planet button {
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    padding-bottom: 7px;
+  }
+
+  &__planet:not(.destination__planet--active) button:hover {
+    border-bottom: 3px solid rgba($main-white, 0.5);
+  }
+
+  &__planet span {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 2.36px;
+    text-transform: uppercase;
+    vertical-align: text-top;
+    color: $main-lavander;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 2.7px;
+    }
+
+    @media (min-width: $desktop-width) {
+    }
+  }
+
+  &__planet--active button {
+    border-bottom: 3px solid $main-white;
+    cursor: initial;
+  }
+
+  &__planet--active span {
+    color: $main-white;
+  }
+
+  &__planet-title {
+    text-transform: uppercase;
+    font-size: 56px;
+    line-height: 56px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 80px;
+      line-height: 80px;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 100px;
+      line-height: 100px;
+      margin-bottom: 14px;
+      grid-area: 3 / 2 / 4 / 3;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    color: $main-lavander;
+    border-bottom: 1px solid #383b4b;
+
+    @media (min-width: $tablet-width) {
+      max-width: 100%;
+      width: 573px;
+      font-size: 16px;
+      line-height: 28px;
+      padding-bottom: 49px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 4 / 2 / 5 / 3;
+      font-size: 18px;
+      line-height: 32px;
+      text-align: left;
+      padding-bottom: 54px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+      gap: 90px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-area: 5 / 2 / 6 / 3;
+      padding-top: 28px;
+    }
+  }
+
+  &__description-list div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    
+    @media (min-width: $desktop-width) {
+       align-items: start;
+    }
+  }
+
+  &__description-list dt {
+    font-family: 'Barlow Condensed';
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 2.36px;
+    color: $main-lavander;
+    text-transform: uppercase;
+  }
+
+  &__description-list dd {
+    font-family: 'Bellefair';
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+  }
+}

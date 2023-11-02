@@ -208,7 +208,7 @@ export const server = (done) => {
 const watcher = () => {
   gulp.watch(path.watch.style, gulp.series('styles'));
   gulp.watch(path.watch.html, gulp.series('html'));
-  gulp.watch(path.watch.js, gulp.series('scripts'));
+  gulp.watch(path.watch.js).on('change', sync.reload);
 };
 
-export default gulp.series(server, watcher, html, styles, scripts);
+export default gulp.series(server, watcher, html, styles);
