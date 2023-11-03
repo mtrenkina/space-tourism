@@ -11,6 +11,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.js$/, // для всех javascript-файлов
         exclude: /node_modules/, // за исключением папки с загружаемыми пакетами
         use: {

@@ -33,27 +33,29 @@
       <span class="visually-hidden">Открыть меню</span>
     </button>
     <div class="main-nav__wrapper">
-      <ol class="main-nav__list site-list">
-        <li class="site-list__item">
-          <a class="site-list__active-link" href="#"><span>00</span> Home</a>
-        </li>
-        <li class="site-list__item">
-          <a href="./destination.html"><span>01</span> Destination</a>
-        </li>
-        <li class="site-list__item">
-          <a href="#"><span>02</span> Crew</a>
-        </li>
-        <li class="site-list__item">
-          <a href="#"><span>03</span> Technology</a>
-        </li>
-      </ol>
+      <div class="main-nav__list site-list swiper-pagination">
+        <div class="site-list__item">
+          <button class="site-list__link site-list__active-link"><span>00</span> Home</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>01</span> Destination</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>02</span> Crew</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>03</span> Technology</button>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
 
     <main class="page-main">
       <h1 class="visually-hidden">Space tourism</h1>
-      <section class="promo">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <section class="promo swiper-slide">
   <div class="promo__wrapper">
     <div class="promo__text">
       <h2 class="h5 h5--font-condensed h5--lavander">
@@ -70,8 +72,7 @@
     <button class="promo__button button h4">Explore</button>
   </div>
 </section>
-
-      <section class="destination">
+ <section class="destination swiper-slide">
   <div class="destination__wrapper">
     <h2 class="destination__title"><span>01</span>Pick your destination</h2>
     <div class="destination__image">
@@ -111,7 +112,7 @@
   </div>
 </section>
 
-      <section class="crew">
+          <section class="crew swiper-slide">
   <div class="crew__wrapper">
     <h2 class="crew__title"><span>02</span>Meet your crew</h2>
       <div class="crew__image">
@@ -140,8 +141,7 @@
     </p>
   </div>
 </section>
-
-      <section class="technology">
+ <section class="technology swiper-slide">
   <div class="technology__wrapper">
     <h2 class="technology__title"><span>03</span>SPACE LAUNCH 101</h2>
 
@@ -175,6 +175,8 @@
   </div>
 </section>
 
+        </div>
+      </div>
     </main>
     <script type="text/javascript" src="./js/script.bundle.js"></script>
   </body>

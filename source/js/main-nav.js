@@ -1,13 +1,17 @@
-//Navigation menu
-const navMain = document.querySelector('.main-nav');
-const navToggle = document.querySelector('.main-nav__toogle');
+import { MEDIA } from "./util.js";
 
-navToggle.addEventListener('click', () => {
-  if (navMain.classList.contains('main-nav--closed')) {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
-  } else {
-    navMain.classList.add('main-nav--closed');
-    navMain.classList.remove('main-nav--opened');
-  }
-});
+export const addClosedClass = (list) => {
+  list.classList.add('main-nav--closed');
+  list.classList.remove('main-nav--opened');
+};
+
+export const addOpenedClass = (list) => {
+  list.classList.remove('main-nav--closed');
+  list.classList.add('main-nav--opened');
+};
+
+export const closeMainNav = (list) => {
+  if (MEDIA.mobile.matches) {
+    addClosedClass(list);
+  };
+};

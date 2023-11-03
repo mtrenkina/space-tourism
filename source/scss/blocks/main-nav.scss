@@ -51,12 +51,12 @@
       background: none;
       padding-left: 0;
       padding-right: 0;
-      display: flex;
       min-width: 450px;
+      display: flex;
     }
     
     @media (min-width: $desktop-width) {
-      min-width: 830px; 
+      width: 830px; 
       height: 96px;
       backdrop-filter: blur(20px);
     }
