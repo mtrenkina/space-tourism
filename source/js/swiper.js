@@ -15,6 +15,7 @@ export const swiper = new Swiper('.swiper', {
   centeredSlides: true,
   speed: 500,
   effect: 'fade',
+  slidesPerView: 'auto',
   fadeEffect: {
     crossFade: true,
   },
@@ -45,32 +46,4 @@ export const swiper = new Swiper('.swiper', {
 
   slidesPerView: 1,
   spaceBetween: 0,
-
-  /*breakpoints: {
-    // when window width is >= 320px
-    768: {
-      spaceBetween: 78,
-    },
-    // when window width is >= 480px
-    1440: {
-      spaceBetween: 660,
-    },
-  },*/
 });
-
-export const changeBackground = () => {
-  const backgroundContainer = document.querySelector('.container-background');
-
-  const index = swiper.activeIndex;
-
-  if (MEDIA.mobile.matches) {
-    backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].mobile})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
-  } else if (MEDIA.tablet.matches) {
-    backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].tablet})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
-  } else {
-    backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].desktop})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
-  }
-};

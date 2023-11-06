@@ -1,8 +1,9 @@
 import { changeCrewMember } from './crew.js';
 import { changePlanet } from './destination.js';
 import { changeTechnology } from './technology.js';
-import { swiper, changeBackground } from './swiper.js';
+import { swiper } from './swiper.js';
 import { addClosedClass, addOpenedClass, closeMainNav } from './main-nav.js';
+import { changeBackground, changeTechnologyPhoto } from './util.js';
 
 //Navigation menu
 const navMain = document.querySelector('.main-nav');
@@ -73,8 +74,12 @@ const mainButton = document.querySelector('.promo__button');
 mainButton.addEventListener('click', () => swiper.slideNext(900));
 
 swiper.on('activeIndexChange', () => {
-    changeBackground();
+    changeBackground(swiper.activeIndex);
     closeMainNav(navMain); 
+    if (swiper.activeIndex === 3) changeTechnologyPhoto();
 });
 
-window.addEventListener('resize', changeBackground, true);
+window.addEventListener('resize', () => {
+  changeBackground(swiper.activeIndex)
+  if (swiper.activeIndex === 3) changeTechnologyPhoto();
+}, true);
