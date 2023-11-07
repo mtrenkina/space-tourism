@@ -26,14 +26,14 @@
 
     @media (min-width: $desktop-width) {
       display: grid;
-      //column-gap: 80px;
-      column-gap: 10%;
-      align-items: start;
+      column-gap: 1%;
+      align-items: flex-start;
       justify-items: start;
-      //grid-template-columns: 488px minmax(500px, 0.8fr);
-      grid-template-columns: minmax(488px, 0.8fr) minmax(445px, 1fr);
+      grid-template-columns: max-content minmax(454px, 614px);
+      grid-template-rows: 34px auto auto auto auto;
       padding-bottom: 0;
-      height: 100%;
+      height: 712px;
+      width: 100%;
     }
   }
 
@@ -54,7 +54,7 @@
 
     @media (min-width: $desktop-width) {
       grid-area: 1 / 1 / 2 / 2;
-      margin-bottom: 154px;
+      margin-bottom: 0;
     }
   }
 
@@ -64,8 +64,8 @@
   }
 
   &__image {
-    width: 532px;
-    height: 572px;
+    max-width: 100%;
+    height: 223px;
     border-bottom: 1px solid #383b4b;
     display: flex;
     flex-direction: column;
@@ -74,6 +74,8 @@
     margin-bottom: 26px;
 
     @media (min-width: $tablet-width) {
+      width: 532px;
+      height: 572px;
       grid-area: 6 / 1 / 7 / 2;
       border: none;
       padding: 0;
@@ -83,19 +85,20 @@
     @media (min-width: $desktop-width) {
       grid-area: 1 / 2 / 6 / 3;
       width: 100%;
-      height: 100%;
-      min-height: 712px;
-      align-self: end;
+      height: max-content;
+      max-height: 712px;
+      justify-content: flex-end;
+      align-self: flex-end;
     }
   }
 
   &__image img {
     height: 100%;
     width: auto;
-
+    
     @media (min-width: $desktop-width) {
-      width: 100%;
-      height: auto;
+      object-fit: contain;
+      align-self: flex-end;
     }
   }
 
@@ -109,7 +112,7 @@
     @media (min-width: $tablet-width) {
       margin-bottom: 45px;
     }
-    
+
     @media (min-width: $desktop-width) {
       margin-bottom: 0px;
       grid-area: 5 / 1 / 6 / 2;
@@ -156,6 +159,10 @@
       font-size: 24px;
       line-height: 24px;
     }
+
+    @media (min-width: $desktop-width) {
+      padding-top: 154px;
+    }
   }
 
   &__person-name {
@@ -168,6 +175,12 @@
       grid-area: 3 / 1 / 4 / 2;
       font-size: 40px;
       line-height: 40px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 56px;
+      line-height: 56px;
+      width: max-content;
     }
   }
 
@@ -183,13 +196,12 @@
       grid-area: 4 / 1 / 5 / 2;
       font-size: 16px;
       line-height: 28px;
-      min-width: 540px;
       min-width: 592px;
       padding-bottom: 120px;
     }
 
     @media (min-width: $desktop-width) {
-      min-width: 458px;
+      min-width: 444px;
       width: 100%;
       text-align: left;
       font-size: 18px;

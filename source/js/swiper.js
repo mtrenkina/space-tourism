@@ -3,7 +3,6 @@ import Swiper from 'swiper/bundle';
 
 // import styles bundle
 import 'swiper/css/bundle';
-import { BACKROUND_LINKS, MEDIA } from './util.js';
 
 const paginationListNames = ['Home', 'Destination', 'Crew', 'Technology'];
 
@@ -12,7 +11,7 @@ export const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
   loop: false,
-  centeredSlides: true,
+  //centeredSlides: true,
   speed: 500,
   effect: 'fade',
   slidesPerView: 'auto',

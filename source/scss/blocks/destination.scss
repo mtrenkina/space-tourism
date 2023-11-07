@@ -15,7 +15,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding-bottom: 58px;
+     
     @media (min-width: $tablet-width) {
       min-width: 100%;
     }
@@ -23,10 +24,9 @@
     @media (min-width: $desktop-width) {
       display: grid;
       //column-gap: 157px;
-      column-gap: 12%;
+      column-gap: 19%;
       align-items: start;
-      grid-template-columns: minmax(500px, 0.8fr) minmax(444px, 0.5fr);
-      padding-bottom: 112px;
+      grid-template-columns: minmax(450px, 472px) minmax(444px, 0.5fr);
     }
   }
 

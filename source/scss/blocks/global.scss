@@ -89,6 +89,7 @@ img {
   width: 100%;
   height: max-content;
   padding: 0 24px;
+  overflow-x: hidden;
 
   @media (min-width: $tablet-width) {
     padding: 0 39px;
