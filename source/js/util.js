@@ -83,3 +83,11 @@ export const changeBackground = (index) => {
     backgroundContainer.style.transition = `background-image 0.8s ease`;
   }
 };
+
+export const getActivePage = () => {
+  const pages = document.querySelector('.swiper-wrapper');
+  const visiblePage = pages.querySelector('section.swiper-slide-visible');
+  const arr = [...pages.childNodes].filter(el => el.nodeName !== "#text");
+
+  return arr.indexOf(visiblePage);
+}

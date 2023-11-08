@@ -29,6 +29,7 @@
     font-weight: 400;
     letter-spacing: 2.7px;
     margin-bottom: 32px;
+    display: flex;
 
     @media (min-width: $tablet-width) {
       align-self: flex-start;

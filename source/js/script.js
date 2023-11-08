@@ -1,11 +1,22 @@
-import { gsap, EasePack } from 'gsap/all.js';
-gsap.registerPlugin(EasePack);
 import { changeCrewMember } from './crew.js';
 import { changePlanet } from './destination.js';
 import { changeTechnology } from './technology.js';
 import { swiper } from './swiper.js';
 import { addClosedClass, addOpenedClass, closeMainNav } from './main-nav.js';
-import { changeBackground, changeTechnologyPhoto } from './util.js';
+import {
+  changeBackground,
+  changeTechnologyPhoto,
+  getActivePage,
+} from './util.js';
+import {
+  startTechnologyPageAnimations,
+  startDestinationPageAnimations,
+  startMainPageAnimations,
+  startCrewPageAnimations,
+  startChangeDestinationAnimations,
+  startChangeCrewAnimations,
+  startChangeTechnologyAnimations,
+} from './animations.js';
 
 //Navigation menu
 const navMain = document.querySelector('.main-nav');
@@ -35,6 +46,7 @@ crewList.addEventListener('click', (event) => {
     return;
   } else {
     changeCrewMember(target, crew, crewList);
+    startChangeCrewAnimations();
   }
 });
 
@@ -52,6 +64,7 @@ planetList.addEventListener('click', (event) => {
     return;
   } else {
     changePlanet(parent, destination, planetList);
+    startChangeDestinationAnimations();
   }
 });
 
@@ -69,16 +82,34 @@ technologyList.addEventListener('click', (event) => {
     return;
   } else {
     changeTechnology(parent, technology, technologyList);
+    startChangeTechnologyAnimations();
   }
 });
 
 const mainButton = document.querySelector('.promo__button');
-mainButton.addEventListener('click', () => swiper.slideNext(900));
+mainButton.addEventListener('click', () => {
+  swiper.slideTo(1, 500, false);
+  startDestinationPageAnimations(true);
+});
 
 swiper.on('activeIndexChange', () => {
   changeBackground(swiper.activeIndex);
   closeMainNav(navMain);
   if (swiper.activeIndex === 3) changeTechnologyPhoto();
+
+  switch (getActivePage()) {
+    case 1:
+      startDestinationPageAnimations(false);
+      break;
+    case 2:
+      startCrewPageAnimations();
+      break;
+    case 3:
+      startTechnologyPageAnimations();
+      break;
+    default:
+      break;
+  }
 });
 
 window.addEventListener(
@@ -90,112 +121,4 @@ window.addEventListener(
   true
 );
 
-//Animations
-const tl = gsap.timeline();
-const spaceTitle = document.querySelector(".shine");
-const spaceLetters = spaceTitle.innerHTML.split('');
-let newText = '';
- for (let i = 0; i < spaceLetters.length; i++) {
-  newText += `<span>${spaceLetters[i]}</span>`
-};
-spaceTitle.innerHTML = newText;
-const TextShadowString = `0 0 10px #fff,
-0 0 20px #fff, 
-0 0 30px #fff`;
-
-const TextShadowString2 = `0 0 8px #fff,
-0 0 15px #fff, 
-0 0 22px #fff`;
-
-const TextShadowString3 = `0 0 5px #fff,
-0 0 10px #fff, 
-0 0 14px #fff`;
-
-const TextShadowString4 = `0 0 2px #fff,
-0 0 5px #fff, 
-0 0 6px #fff`;
-
-const TextShadowString5 = `0 0 00px #fff,
-0 0 00px #fff, 
-0 0 00px #fff`;
-
-tl.fromTo('.container-background', { opacity: 0 }, { opacity: 1, duration: 3 });
-tl.fromTo(
-  '.shine span',
-  { opacity: 0 },
-  {
-    opacity: 1,
-    textShadow: TextShadowString,
-    ease: "slow(0.7,0.7,false)",
-    stagger: 0.2,
-    duration: 2,
-  },
-  1
-);
-tl.fromTo(
-  '.shine span',
-  { textShadow: TextShadowString },
-  { textShadow: TextShadowString2, duration: 0.3 },
-  3
-);
-tl.fromTo(
-  '.shine span',
-  { textShadow: TextShadowString2 },
-  { textShadow: TextShadowString3, duration: 0.3 },
-  3.3
-);
-tl.fromTo(
-  '.shine span',
-  { textShadow: TextShadowString3 },
-  { textShadow: TextShadowString4, duration: 0.3 },
-  3.6
-);
-tl.fromTo(
-  '.shine span',
-  { textShadow: TextShadowString4 },
-  { textShadow: TextShadowString5, ease: 'slow', duration: 0.3 },
-  3.9
-);
-tl.fromTo(
-  '.promo__title',
-  { opacity: 0, x: -100 },
-  { opacity: 1, x: 0, duration: 2 },
-  4
-);
-tl.fromTo(
-  '.promo__description',
-  { opacity: 0, x: 100 },
-  { opacity: 1, x: 0, duration: 2 },
-  4
-);
-tl.fromTo(
-  '.main-nav__logo',
-  { opacity: 0, y: -50 },
-  { opacity: 1, y: 0, duration: 1 },
-  5
-);
-tl.fromTo(
-  '.main-nav__toogle',
-  { opacity: 0, y: 50 },
-  { opacity: 1, y: 0, duration: 1 },
-  5
-);
-tl.fromTo(
-  '.main-nav__wrapper',
-  { opacity: 0, y: 50 },
-  { opacity: 1, y: 0, duration: 1 },
-  5
-);
-tl.fromTo(
-  '.main-nav__wrapper .site-list__item',
-  { opacity: 0, y: 50 },
-  { opacity: 1, y: 0, stagger: 0.2, duration: 1 },
-  5
-);
-tl.fromTo(
-  '.main-nav__line',
-  { opacity: 0, x: 100 },
-  { opacity: 1, x: 0, duration: 1 },
-  5
-);
-tl.fromTo('.promo__button', { opacity: 0 }, { opacity: 1, duration: 1 }, 6.4);
+startMainPageAnimations();
