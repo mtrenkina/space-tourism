@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link type="text/css" rel="stylesheet" href="./css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <title>Space tourism</title>
+  </head>
+  <body class="container">
+    <div class="container-background"></div>
+    <object
+      class="visually-hidden"
+      type="image/svg+xml"
+      data="./img/sprite.min.svg"
+    ></object>
+    <header class="page-header">
+  <nav class="main-nav main-nav--closed">
+    <a href="#" class="main-nav__logo">
+      <img src="./img/logo.svg" alt="Space travel logo" />
+    </a>
+    <button class="main-nav__toogle" type="button">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <div class="main-nav__line"></div>
+    <div class="main-nav__wrapper">
+      <div class="main-nav__list site-list swiper-pagination">
+        <div class="site-list__item">
+          <button class="site-list__link site-list__active-link"><span>00</span> Home</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>01</span> Destination</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>02</span> Crew</button>
+        </div>
+        <div class="site-list__item">
+          <button class="site-list__link"><span>03</span> Technology</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Space tourism</h1>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <section class="section promo swiper-slide">
+  <div class="section__wrapper promo__wrapper">
+    <div class="promo__text">
+      <h2 class="promo__title h5 h5--font-condensed h5--lavander">
+        So, you want to travel to
+      </h2>
+      <h2 class="shine h1">Space</h2>
+      <p class="section__description promo__description">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+    <button class="promo__button button h4">Explore</button>
+  </div>
+</section>
+ <section class="section destination swiper-slide">
+  <div class="section__wrapper destination__wrapper">
+    <h2 class="section__title destination__title"><span>01</span><div>Pick your destination</div></h2>
+    <div class="destination__image">
+      <img src="../img/destination/image-moon.png" alt="Moon" />
+    </div>
+    <ul class="destination__planet-list">
+      <li class="destination__planet destination__planet--active">
+        <button><span>Moon</span></button>
+      </li>
+      <li class="destination__planet">
+        <button><span>Mars</span></button>
+      </li>
+      <li class="destination__planet">
+        <button><span>Europa</span></button>
+      </li>
+      <li class="destination__planet">
+        <button><span>Titan</span></button>
+      </li>
+    </ul>
+    <h3 class="h1 destination__planet-title">Moon</h3>
+    <p class="section__description destination__description">
+      See our planet as you’ve never seen it before. A perfect relaxing trip
+      away to help regain perspective and come back refreshed. While you’re
+      there, take in some history by visiting the Luna 2 and Apollo 11 landing
+      sites.
+    </p>
+    <dl class="destination__description-list">
+      <div>
+        <dt>Avg. distance</dt>
+        <dd id="destination__distance">384,400 km</dd>
+      </div>
+      <div>
+        <dt>Est. travel time</dt>
+        <dd id="destination__travel-time">3 days</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+          <section class="section crew swiper-slide">
+  <div class="section__wrapper crew__wrapper">
+    <h2 class="section__title crew__title"><span>02</span><div>Meet your crew</div></h2>
+      <div class="crew__image">
+        <img src="../img/crew/image-douglas-hurley.webp" alt="Douglas Hurley" />
+      </div>
+      <ul class="crew__team-list">
+        <li class="crew__person crew__person--active">
+          <button><span class="visually-hidden">1</span></button>
+        </li>
+        <li class="crew__person">
+          <button><span class="visually-hidden">2</span></button>
+        </li>
+        <li class="crew__person">
+          <button><span class="visually-hidden">3</span></button>
+        </li>
+        <li class="crew__person">
+          <button><span class="visually-hidden">4</span></button>
+        </li>
+      </ul>
+    <h4 class="h4 crew__person-title">Commander</h4>
+    <h3 class="h4 crew__person-name">Douglas Hurley</h3>
+    <p class="section__description crew__person-description">
+      Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
+      and former NASA astronaut. He launched into space for the third time as
+      commander of Crew Dragon Demo-2.
+    </p>
+  </div>
+</section>
+ <section class="section technology swiper-slide">
+  <div class="section__wrapper technology__wrapper">
+    <h2 class="section__title technology__title"><span>03</span><div>SPACE LAUNCH 101</div></h2>
+
+    <div class="technology__image">
+      <img
+        src="../img/technology/image-launch-vehicle-landscape.jpg"
+        alt="Launch vehicle"
+      />
+    </div>
+    <ul class="technology__list">
+      <li class="technology__item technology__item--active">
+        <button><span>1</span></button>
+      </li>
+      <li class="technology__item">
+        <button><span>2</span></button>
+      </li>
+      <li class="technology__item">
+        <button><span>3</span></button>
+      </li>
+    </ul>
+
+    <h4 class="h4 technology__item-title">The terminology…</h4>
+    <h3 class="h4 technology__item-name">Launch vehicle</h3>
+    <p class="section__description technology__item-description">
+      A launch vehicle or carrier rocket is a rocket-propelled vehicle used to
+      carry a payload from Earth's surface to space, usually to Earth orbit or
+      beyond. Our WEB-X carrier rocket is the most powerful in operation.
+      Standing 150 metres tall, it's quite an awe-inspiring sight on the launch
+      pad!
+    </p>
+  </div>
+</section>
+
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="./js/script.bundle.js"></script>
+  </body>
+</html>
