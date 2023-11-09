@@ -20,9 +20,12 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
 
-### Screenshot
+### Screenshots
 
-![](./space-tourism-main.png)
+![](./preview/space-tourism-main.png)
+![](./preview/space-tourism-destination.png)
+![](./preview/space-tourism-crew.png)
+![](./preview/space-tourism-technology.png)
 
 ### Built with
 
