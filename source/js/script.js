@@ -92,10 +92,14 @@ mainButton.addEventListener('click', () => {
   startDestinationPageAnimations(true);
 });
 
-swiper.on('activeIndexChange', () => {
+const swiperMainAction = () => {
   changeBackground(swiper.activeIndex);
   closeMainNav(navMain);
   if (swiper.activeIndex === 3) changeTechnologyPhoto();
+};
+
+swiper.on('slideNextTransitionStart', () => {
+  swiperMainAction();
 
   switch (getActivePage()) {
     case 1:
@@ -110,6 +114,10 @@ swiper.on('activeIndexChange', () => {
     default:
       break;
   }
+});
+
+swiper.on('slidePrevTransitionStart', () => {
+  swiperMainAction();
 });
 
 window.addEventListener(

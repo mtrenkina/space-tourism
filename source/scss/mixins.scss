@@ -1,11 +1,3 @@
-/* Parametrs order:
-1. font-size
-2. line-height
-3. font-family
-4. letter-spacing
-5. color
-6. font-weight
-*/
 @mixin mxn-font-style($size: $baseFontSize, $lineHeight: $baseLineHeight, $fontFamily: $baseFontFamily, $characterSpace: $baseCharacterSpace, $color: $main-white, $weight: 400) {
     font-size: $size;
     line-height: $lineHeight;

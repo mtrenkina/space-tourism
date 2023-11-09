@@ -1,6 +1,4 @@
 .destination {
-  width: 100%;
-
   @media (min-width: $tablet-width) {
     overflow: hidden;
   }
@@ -12,9 +10,6 @@
   }
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-bottom: 58px;
      
     @media (min-width: $tablet-width) {
@@ -23,7 +18,6 @@
 
     @media (min-width: $desktop-width) {
       display: grid;
-      //column-gap: 157px;
       column-gap: 19%;
       align-items: start;
       grid-template-columns: minmax(450px, 472px) minmax(444px, 0.5fr);
@@ -31,30 +25,10 @@
   }
 
   &__title {
-    text-transform: uppercase;
-    font-size: 16px;
-    font-family: 'Barlow Condensed';
-    font-weight: 400;
-    letter-spacing: 2.7px;
-    margin-bottom: 32px;
-    display: flex;
-
-    @media (min-width: $tablet-width) {
-      align-self: flex-start;
-      font-size: 20px;
-      letter-spacing: 3.38px;
-      margin-bottom: 60px;
-    }
-
     @media (min-width: $desktop-width) {
       grid-area: 1 / 1 / 2 / 2;
       margin-bottom: 97px;
     }
-  }
-
-  &__title span {
-    opacity: 0.25;
-    margin-right: 15px;
   }
 
   &__image {
@@ -183,28 +157,21 @@
   }
 
   &__description {
-    font-size: 15px;
-    line-height: 25px;
     text-align: center;
     padding-bottom: 32px;
     margin-bottom: 32px;
-    color: $main-lavander;
     border-bottom: 1px solid #383b4b;
     max-width: 327px;
 
     @media (min-width: $tablet-width) {
       max-width: 100%;
       width: 573px;
-      font-size: 16px;
-      line-height: 28px;
       padding-bottom: 49px;
       margin-bottom: 28px;
     }
 
     @media (min-width: $desktop-width) {
       grid-area: 4 / 2 / 5 / 3;
-      font-size: 18px;
-      line-height: 32px;
       text-align: left;
       padding-bottom: 54px;
       margin-bottom: 0;

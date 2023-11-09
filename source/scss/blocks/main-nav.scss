@@ -40,11 +40,11 @@
   &__wrapper {
     position: absolute;
     z-index: 10;
-    right: 4px;
+    right: 0;
     top: 0;
-    backdrop-filter: blur(70px);
     width: 254px;
     height: 100%;
+    animation: blur-in 0.5s forwards;
 
     @media (min-width: $tablet-width) {
       position: static;
@@ -54,12 +54,23 @@
       padding-right: 0;
       min-width: 450px;
       display: flex;
+      transition: none;
+      backdrop-filter: blur(40px);
+      animation: none;
     }
     
     @media (min-width: $desktop-width) {
       width: 830px; 
       height: 96px;
-      backdrop-filter: blur(20px);
+    }
+  }
+
+  @keyframes blur-in {
+    from {
+      backdrop-filter: blur(0px);
+    }
+    to {
+      backdrop-filter: blur(40px);
     }
   }
 
@@ -68,7 +79,6 @@
       position: absolute;
       z-index: 11;
       top: 92px;
-      //left: 190px;
       left: 12%;
       width: 473px; 
       height: 1px;
@@ -144,6 +154,7 @@
     height: 3px;
     background-color: $main-lavander;
     box-shadow: 0 8px 0 0 $main-lavander, 0 16px 0 0 $main-lavander;
+    transition: box-shadow 0.5s ease-out;
   }
 
   @media (max-width: $mobile-width-max) {
