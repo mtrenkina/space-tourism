@@ -46,8 +46,8 @@
   "scripts": {
     "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax sass",
     "test": "npm run stylelint",
-    "build": "gulp && webpack --mode production",
-    "scripts": "webpack --mode production",
+    "build": "gulp styles && gulp html",
+    "script": "webpack",
     "start": "gulp",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -72,6 +72,7 @@
     "css-loader": "^6.8.1",
     "gh-pages": "^5.0.0",
     "gsap": "^3.12.2",
+    "lodash": "^4.17.21",
     "style-loader": "^3.3.3",
     "swiper": "^11.0.3"
   }

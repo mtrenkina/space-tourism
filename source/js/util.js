@@ -1,23 +1,37 @@
+import gsap from 'gsap';
+
 export const BACKROUND_LINKS = {
   0: {
-    mobile: '../../img/home/background-home-mobile.jpg',
-    tablet: '../../img/home/background-home-tablet.jpg',
-    desktop: '../../img/home/background-home-desktop.jpg',
+    mobile:
+      'https://mtrenkina.github.io/space-tourism/img/home/background-home-mobile.jpg',
+    tablet:
+      'https://mtrenkina.github.io/space-tourism/img/home/background-home-tablet.jpg',
+    desktop:
+      'https://mtrenkina.github.io/space-tourism/img/home/background-home-desktop.jpg',
   },
   1: {
-    mobile: '../../img/destination/background-destination-mobile.jpg',
-    tablet: '../../img/destination/background-destination-tablet.jpg',
-    desktop: '../../img/destination/background-destination-desktop.jpg',
+    mobile:
+      'https://mtrenkina.github.io/space-tourism/img/destination/background-destination-mobile.jpg',
+    tablet:
+      'https://mtrenkina.github.io/space-tourism/img/destination/background-destination-tablet.jpg',
+    desktop:
+      'https://mtrenkina.github.io/space-tourism/img/destination/background-destination-desktop.jpg',
   },
   2: {
-    mobile: '../../img/crew/background-crew-mobile.jpg',
-    tablet: '../../img/crew/background-crew-tablet.jpg',
-    desktop: '../../img/crew/background-crew-desktop.jpg',
+    mobile:
+      'https://mtrenkina.github.io/space-tourism/img/crew/background-crew-mobile.jpg',
+    tablet:
+      'https://mtrenkina.github.io/space-tourism/img/crew/background-crew-tablet.jpg',
+    desktop:
+      'https://mtrenkina.github.io/space-tourism/img/crew/background-crew-desktop.jpg',
   },
   3: {
-    mobile: '../../img/technology/background-technology-mobile.jpg',
-    tablet: '../../img/technology/background-technology-tablet.jpg',
-    desktop: '../../img/technology/background-technology-desktop.jpg',
+    mobile:
+      'https://mtrenkina.github.io/space-tourism/img/technology/background-technology-mobile.jpg',
+    tablet:
+      'https://mtrenkina.github.io/space-tourism/img/technology/background-technology-tablet.jpg',
+    desktop:
+      'https://mtrenkina.github.io/space-tourism/img/technology/background-technology-desktop.jpg',
   },
 };
 
@@ -29,16 +43,22 @@ export const MEDIA = {
 
 export const TECHNOLOGY_PHOTOS = {
   0: {
-    portrait: '../../img/technology/image-launch-vehicle-portrait.jpg',
-    landscape: '../../img/technology/image-launch-vehicle-landscape.jpg',
+    portrait:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-launch-vehicle-portrait.jpg',
+    landscape:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-launch-vehicle-landscape.jpg',
   },
   1: {
-    portrait: '../../img/technology/image-spaceport-portrait.jpg',
-    landscape: '../../img/technology/image-spaceport-landscape.jpg',
+    portrait:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-spaceport-portrait.jpg',
+    landscape:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-spaceport-landscape.jpg',
   },
   2: {
-    portrait: '../../img/technology/image-space-capsule-portrait.jpg',
-    landscape: '../../img/technology/image-space-capsule-landscape.jpg',
+    portrait:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-space-capsule-portrait.jpg',
+    landscape:
+      'https://mtrenkina.github.io/space-tourism/img/technology/image-space-capsule-landscape.jpg',
   },
 };
 
@@ -69,25 +89,60 @@ export const changeTechnologyPhoto = () => {
   }
 };
 
+const backgroundRemove = () => {
+  gsap.fromTo(
+    '.container-background',
+    { opacity: 1 },
+    { opacity: 0 }
+  );
+};
+
+const backgroundAddition = () => {
+  gsap.fromTo(
+    '.container-background',
+    { opacity: 0 },
+    { opacity: 1, duration: 2}
+  );
+};
+
 export const changeBackground = (index) => {
   const backgroundContainer = document.querySelector('.container-background');
 
   if (MEDIA.mobile.matches) {
+    backgroundRemove();
     backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].mobile})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
+    backgroundAddition();
   } else if (MEDIA.tablet.matches) {
+    backgroundRemove();
     backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].tablet})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
+    backgroundAddition();
   } else {
+    backgroundRemove();
     backgroundContainer.style.backgroundImage = `url(${BACKROUND_LINKS[index].desktop})`;
-    backgroundContainer.style.transition = `background-image 0.8s ease`;
+    backgroundAddition();
   }
 };
 
 export const getActivePage = () => {
   const pages = document.querySelector('.swiper-wrapper');
   const visiblePage = pages.querySelector('section.swiper-slide-visible');
-  const arr = [...pages.childNodes].filter(el => el.nodeName !== "#text");
+  const arr = [...pages.childNodes].filter((el) => el.nodeName !== '#text');
 
   return arr.indexOf(visiblePage);
-}
+};
+
+export const before = (n, func) => {
+  var result;
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  return function () {
+    if (--n > 0) {
+      result = func.apply(this, arguments);
+    }
+    if (n <= 1) {
+      func = undefined;
+    }
+    return result;
+  };
+};

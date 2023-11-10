@@ -1,7 +1,7 @@
 .promo {
   &__wrapper {
     @media (min-width: $desktop-width) {
-      padding-top: 120px;
+      padding-top: 175px;
       flex-direction: row;
       justify-content: space-between;
       gap: 386px;
@@ -37,6 +37,7 @@
 
     @media (min-width: $desktop-width) {
       text-align: justify;
+      padding-top: 10px;
     }
   }
 
@@ -66,6 +67,7 @@
     }
 
     @media (min-width: $desktop-width) {
+      padding-top: 15px;
     }
   }
 

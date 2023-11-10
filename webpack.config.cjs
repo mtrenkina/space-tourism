@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: './source/js/script.js',
   devtool: 'source-map',
   watch: true,

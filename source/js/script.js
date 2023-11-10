@@ -1,3 +1,5 @@
+import { once } from 'lodash';
+
 import { changeCrewMember } from './crew.js';
 import { changePlanet } from './destination.js';
 import { changeTechnology } from './technology.js';
@@ -86,38 +88,36 @@ technologyList.addEventListener('click', (event) => {
   }
 });
 
+const oncedDestinationAnimations = once(startDestinationPageAnimations);
+const oncedCrewAnimations = once(startCrewPageAnimations);
+const oncedTechnologyAnimations = once(startTechnologyPageAnimations);
+const oncedDestinationFromButtonAnimations = once(() =>startDestinationPageAnimations(true));
+
 const mainButton = document.querySelector('.promo__button');
 mainButton.addEventListener('click', () => {
   swiper.slideTo(1, 500, false);
-  startDestinationPageAnimations(true);
+  changeBackground(swiper.activeIndex);
+  oncedDestinationFromButtonAnimations();
 });
 
-const swiperMainAction = () => {
+swiper.on('activeIndexChange', () => {
   changeBackground(swiper.activeIndex);
   closeMainNav(navMain);
-  if (swiper.activeIndex === 3) changeTechnologyPhoto();
-};
-
-swiper.on('slideNextTransitionStart', () => {
-  swiperMainAction();
 
   switch (getActivePage()) {
     case 1:
-      startDestinationPageAnimations(false);
+      oncedDestinationAnimations();
       break;
     case 2:
-      startCrewPageAnimations();
+      oncedCrewAnimations();
       break;
     case 3:
-      startTechnologyPageAnimations();
+      oncedTechnologyAnimations();
+      changeTechnologyPhoto();
       break;
     default:
       break;
   }
-});
-
-swiper.on('slidePrevTransitionStart', () => {
-  swiperMainAction();
 });
 
 window.addEventListener(

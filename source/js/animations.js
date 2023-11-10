@@ -36,6 +36,7 @@ export const startMainPageAnimations = () => {
 0 0 00px #fff, 
 0 0 00px #fff`;
 
+  tl.to('.container', { opacity: 1 });
   tl.fromTo(
     '.container-background',
     { opacity: 0 },
@@ -124,7 +125,7 @@ export const startMainPageAnimations = () => {
   tl.eventCallback('onComplete', () => (title.innerHTML = previousTitle));
 };
 
-export const startDestinationPageAnimations = (fromButton) => {
+export const startDestinationPageAnimations = (fromButton = false) => {
   const tl = gsap.timeline();
   const title = document.querySelector('.destination__planet-title');
   const previousTitle = title.innerHTML;
@@ -203,12 +204,12 @@ export const startChangeDestinationAnimations = () => {
   const letterCount = previousTitle.length;
   splitWordtoSpans(title);
 
-  tl.fromTo('.destination__image', { opacity: 1 }, { opacity: 0 }, 0);
+  tl.fromTo('.destination__image', { opacity: 1 }, { opacity: 0 }, 0.3);
   tl.fromTo(
     '.destination__image',
     { opacity: 0, y: 25 },
     { opacity: 1, y: 0, duration: 0.5 },
-    0
+    0.3
   );
   tl.fromTo('.destination__planet-title', { opacity: 1 }, { opacity: 0 }, 0);
   tl.fromTo('.destination__planet-title', { opacity: 0 }, { opacity: 1 }, 0);
@@ -309,12 +310,12 @@ export const startChangeCrewAnimations = () => {
 
   splitWordtoSpans(title);
 
-  tl.fromTo('.crew__image', { opacity: 1 }, { opacity: 0 }, 0);
+  tl.fromTo('.crew__image', { opacity: 1 }, { opacity: 0 }, 0.3);
   tl.fromTo(
     '.crew__image',
     { opacity: 0, y: 25 },
     { opacity: 1, y: 0, duration: 0.5 },
-    0
+    0.3
   );
   tl.fromTo('.crew__person-name', { opacity: 1 }, { opacity: 0 }, 0);
   tl.fromTo('.crew__person-name', { opacity: 0 }, { opacity: 1 }, 0);
@@ -410,12 +411,12 @@ export const startChangeTechnologyAnimations = () => {
 
   splitWordtoSpans(title);
 
-  tl.fromTo('.technology__image', { opacity: 1 }, { opacity: 0 }, 0);
+  tl.fromTo('.technology__image', { opacity: 1 }, { opacity: 0 }, 0.3);
   tl.fromTo(
     '.technology__image',
     { opacity: 0, x: 50 },
     { opacity: 1, x: 0, duration: 1 },
-    0
+    0.3
   );
   tl.fromTo('.technology__item-name', { opacity: 1 }, { opacity: 0 }, 0);
   tl.fromTo('.technology__item-name', { opacity: 0 }, { opacity: 1 }, 0);

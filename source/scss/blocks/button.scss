@@ -18,7 +18,8 @@
   }
   
   @media (min-width: $desktop-width) {
-    margin: 0;
+    margin-bottom: -18px;
+    margin-right: 5px;
   }
 
   &::before {
